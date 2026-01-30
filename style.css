@@ -3,10 +3,10 @@
             padding: 0;
             box-sizing: border-box;
         }
-html{
-            scroll-behavior: smooth;
-}
 
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: 'Georgia', serif;
@@ -14,6 +14,7 @@ html{
             color: #ffffff;
             line-height: 1.6;
             padding-top: 70px;
+            overflow-x: hidden;
         }
 
         nav {
@@ -26,6 +27,16 @@ html{
             z-index: 10;
             box-shadow: 0 4px 20px rgba(0, 100, 255, 0.5);
             border-bottom: 2px solid #0066ff;
+            opacity: 0;
+            transform: translateY(-100%);
+            animation: slideDown 0.8s ease-out 0.3s forwards;
+        }
+
+        @keyframes slideDown {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         nav a {
@@ -77,6 +88,16 @@ html{
             margin-top: 80px;
             color: #00ccff;
             text-shadow: 0 0 20px rgba(0, 200, 255, 0.8), 0 0 40px rgba(0, 100, 255, 0.6), 0 0 60px rgba(0, 100, 255, 0.4);
+            opacity: 0;
+            transform: scale(0.5);
+            animation: scaleIn 1s ease-out 0.2s forwards;
+        }
+
+        @keyframes scaleIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         .tagline {
@@ -84,6 +105,9 @@ html{
             color: #66d9ff;
             font-style: italic;
             text-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease-out 0.5s forwards;
         }
 
         .container {
@@ -94,7 +118,25 @@ html{
 
         .section {
             margin-bottom: 80px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 0.8s ease-out forwards;
         }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Stagger animation delays for multiple sections */
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+        .section:nth-child(5) { animation-delay: 0.5s; }
+        .section:nth-child(6) { animation-delay: 0.6s; }
 
         .section-title {
             font-size: 2.8em;
@@ -106,6 +148,16 @@ html{
             position: relative;
             padding-bottom: 20px;
             text-shadow: 0 0 20px rgba(0, 200, 255, 0.9), 0 0 40px rgba(0, 100, 255, 0.7), 0 0 60px rgba(0, 100, 255, 0.5);
+            opacity: 0;
+            transform: translateY(-30px);
+            animation: fadeInDown 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeInDown {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .section-title::after {
@@ -134,12 +186,18 @@ html{
             border-radius: 10px;
             box-shadow: 0 10px 40px rgba(0, 100, 255, 0.5);
             border: 3px solid #0066ff;
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: slideInLeft 0.8s ease-out 0.2s forwards;
         }
 
         .about-text {
             font-size: 1.1em;
             line-height: 1.8;
             color: #cccccc;
+            opacity: 0;
+            transform: translateX(50px);
+            animation: slideInRight 0.8s ease-out 0.4s forwards;
         }
 
         .about-text p {
@@ -160,7 +218,17 @@ html{
             border: 2px solid #0066ff;
             transition: all 0.3s ease;
             box-shadow: 0 5px 20px rgba(0, 100, 255, 0.3);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease-out forwards;
         }
+
+        .service-card:nth-child(1) { animation-delay: 0.1s; }
+        .service-card:nth-child(2) { animation-delay: 0.2s; }
+        .service-card:nth-child(3) { animation-delay: 0.3s; }
+        .service-card:nth-child(4) { animation-delay: 0.4s; }
+        .service-card:nth-child(5) { animation-delay: 0.5s; }
+        .service-card:nth-child(6) { animation-delay: 0.6s; }
 
         .service-card:hover {
             transform: translateY(-10px);
@@ -192,7 +260,24 @@ html{
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
             height: 350px;
             border: 2px solid #0066ff;
+            opacity: 0;
+            transform: scale(0.9);
+            animation: zoomIn 0.6s ease-out forwards;
         }
+
+        @keyframes zoomIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .gallery-item:nth-child(1) { animation-delay: 0.1s; }
+        .gallery-item:nth-child(2) { animation-delay: 0.2s; }
+        .gallery-item:nth-child(3) { animation-delay: 0.3s; }
+        .gallery-item:nth-child(4) { animation-delay: 0.4s; }
+        .gallery-item:nth-child(5) { animation-delay: 0.5s; }
+        .gallery-item:nth-child(6) { animation-delay: 0.6s; }
 
         .gallery-item img {
             width: 100%;
@@ -246,7 +331,36 @@ html{
             text-align: center;
             border: 2px solid #0066ff;
             transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateX(-30px);
+            animation: slideInLeft 0.6s ease-out forwards;
         }
+
+        @keyframes slideInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .music-card:nth-child(odd) {
+            animation-name: slideInRight;
+            transform: translateX(30px);
+        }
+
+        @keyframes slideInRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .music-card:nth-child(1) { animation-delay: 0.1s; }
+        .music-card:nth-child(2) { animation-delay: 0.2s; }
+        .music-card:nth-child(3) { animation-delay: 0.3s; }
+        .music-card:nth-child(4) { animation-delay: 0.4s; }
+        .music-card:nth-child(5) { animation-delay: 0.5s; }
+        .music-card:nth-child(6) { animation-delay: 0.6s; }
 
         .music-card:hover {
             transform: translateY(-10px);
@@ -306,7 +420,24 @@ html{
             border: 2px solid #0066ff;
             box-shadow: 0 5px 20px rgba(0, 100, 255, 0.4);
             transition: all 0.3s ease;
+            opacity: 0;
+            transform: rotateY(90deg);
+            animation: rotateIn 0.7s ease-out forwards;
         }
+
+        @keyframes rotateIn {
+            to {
+                opacity: 1;
+                transform: rotateY(0deg);
+            }
+        }
+
+        .video-item:nth-child(1) { animation-delay: 0.1s; }
+        .video-item:nth-child(2) { animation-delay: 0.2s; }
+        .video-item:nth-child(3) { animation-delay: 0.3s; }
+        .video-item:nth-child(4) { animation-delay: 0.4s; }
+        .video-item:nth-child(5) { animation-delay: 0.5s; }
+        .video-item:nth-child(6) { animation-delay: 0.6s; }
 
         .video-item:hover {
             transform: translateY(-10px);
@@ -332,7 +463,24 @@ html{
             border: 2px solid #0066ff;
             box-shadow: 0 5px 20px rgba(0, 100, 255, 0.3);
             transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(40px) rotate(-2deg);
+            animation: fadeInRotate 0.7s ease-out forwards;
         }
+
+        @keyframes fadeInRotate {
+            to {
+                opacity: 1;
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+
+        .testimonial-card:nth-child(1) { animation-delay: 0.1s; }
+        .testimonial-card:nth-child(2) { animation-delay: 0.2s; }
+        .testimonial-card:nth-child(3) { animation-delay: 0.3s; }
+        .testimonial-card:nth-child(4) { animation-delay: 0.4s; }
+        .testimonial-card:nth-child(5) { animation-delay: 0.5s; }
+        .testimonial-card:nth-child(6) { animation-delay: 0.6s; }
 
         .testimonial-card:hover {
             transform: translateY(-5px);
@@ -372,7 +520,33 @@ html{
         .contact-item {
             font-size: 1.2em;
             color: #cccccc;
+            opacity: 0;
+            transform: scale(0.8);
+            animation: bounceIn 0.6s ease-out forwards;
         }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .contact-item:nth-child(1) { animation-delay: 0.1s; }
+        .contact-item:nth-child(2) { animation-delay: 0.2s; }
+        .contact-item:nth-child(3) { animation-delay: 0.3s; }
+        .contact-item:nth-child(4) { animation-delay: 0.4s; }
 
         .contact-item a {
             color: #00ccff;
@@ -405,7 +579,23 @@ html{
             text-decoration: none;
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(0, 100, 255, 0.5);
+            opacity: 0;
+            transform: translateY(30px) rotate(180deg);
+            animation: flipIn 0.6s ease-out forwards;
         }
+
+        @keyframes flipIn {
+            to {
+                opacity: 1;
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+
+        .social-links a:nth-child(1) { animation-delay: 0.1s; }
+        .social-links a:nth-child(2) { animation-delay: 0.2s; }
+        .social-links a:nth-child(3) { animation-delay: 0.3s; }
+        .social-links a:nth-child(4) { animation-delay: 0.4s; }
+        .social-links a:nth-child(5) { animation-delay: 0.5s; }
 
         .social-links a:hover {
             background: #00ccff;
@@ -1430,3 +1620,30 @@ html{
             }
         }
 
+        /* Reduced Motion for Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* Parallax effect on scroll (optional enhancement) */
+        @media (min-width: 768px) {
+            header::before {
+                animation: parallaxMove 20s ease-in-out infinite;
+            }
+
+            @keyframes parallaxMove {
+                0%, 100% {
+                    transform: scale(1) translateY(0);
+                }
+                50% {
+                    transform: scale(1.1) translateY(-20px);
+                }
+            }
+        }
